@@ -455,6 +455,9 @@ public class SettingsActivity extends PreferenceActivity implements UiCallBackLi
      * @see #sBindPreferenceSummaryToValueListener
      */
     private void bindPreferenceSummaryToValue(Preference preference) {
+        if (preference == null) {
+                return;
+        }
         // Set the listener to watch for value changes.
         String stringValue = preference.toString();
         String mKey = preference.getKey();
