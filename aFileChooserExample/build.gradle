@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 34
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.ipaulpro.afilechooserexample"
-        minSdkVersion 14
-        targetSdkVersion 26
+        minSdkVersion 19
+        targetSdkVersion 34
     }
     buildTypes {
         release {
@@ -25,10 +25,10 @@ android {
     productFlavors {
         releaseFlavor {
             dimension 'dimention1'
-            minSdkVersion 14
+            minSdkVersion 19
             applicationId 'com.pmiyusov.mvm'
             proguardFile '/home/paul/StudioProjects/mvm2/proguard.cfg'
-            targetSdkVersion 27
+            targetSdkVersion 34
             versionCode 7
         }
 
