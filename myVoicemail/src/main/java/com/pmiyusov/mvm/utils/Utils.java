@@ -193,7 +193,7 @@ public class Utils {
                     default:
                         break;
             }
-        } finally {
+        } finally (Exception e) {
             e.printStackTrace();
             Log.d(TAG,
                     "FATAL ERROR: could not connect to telephony subsystem");
