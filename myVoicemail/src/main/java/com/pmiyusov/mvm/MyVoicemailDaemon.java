@@ -338,10 +338,9 @@ public class MyVoicemailDaemon extends Service {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            Log.d(TAG,
-                    "FATAL ERROR: could not connect to telephony subsystem");
-            Log.d(TAG, "Exception object: " + e);
-        }
+            Log.e(TAG,
+                    " ERROR: could not connect to telephony subsystem");
+            Log.e(TAG, "Exception object: " + e);        }
     }
 
 
