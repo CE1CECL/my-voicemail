@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 34
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '34.0.0'
     defaultConfig {
         applicationId "com.ipaulpro.afilechooserexample"
         minSdkVersion 19
@@ -55,6 +55,6 @@ android {
 
 dependencies {
     implementation project(':aFileChooser')
-    //    implementation "com.android.support:support-core-utils:27.1.1"
-    implementation 'com.android.support:appcompat-v7:27.0.0'
+    //    implementation "com.android.support:support-core-utils:34.1.1"
+    implementation 'com.android.support:appcompat-v7:34.0.0'
 }
