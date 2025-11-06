@@ -128,60 +128,6 @@ public class Utils {
 
 
         try {
-            //String serviceManagerName = "android.os.IServiceManager";
-            String serviceManagerName = "android.os.ServiceManager";
-            String serviceManagerNativeName = "android.os.ServiceManagerNative";
-            String telephonyName = "com.android.internal.telephony.ITelephony";
-
-            Class telephonyClass;
-            Class telephonyStubClass;
-            Class serviceManagerClass;
-            Class serviceManagerStubClass;
-            Class serviceManagerNativeClass;
-            Class serviceManagerNativeStubClass;
-
-            Method telephonyCall;
-            Method telephonyEndCall;
-            Method telephonyAnswerCall;
-            Method getDefault;
-
-            Method[] temps;
-            Constructor[] serviceManagerConstructor;
-
-            // Method getService;
-            Object telephonyObject;
-            Object serviceManagerObject;
-
-            telephonyClass = Class.forName(telephonyName);
-            telephonyStubClass = telephonyClass.getClasses()[0];
-            serviceManagerClass = Class.forName(serviceManagerName);
-            serviceManagerNativeClass = Class.forName(serviceManagerNativeName);
-
-            Method getService = // getDefaults[29];
-                    serviceManagerClass.getMethod("getService", String.class);
-
-            Method tempInterfaceMethod = serviceManagerNativeClass.getMethod(
-                    "asInterface", IBinder.class);
-
-            Binder tmpBinder = new Binder();
-            tmpBinder.attachInterface(null, "fake");
-
-            serviceManagerObject = tempInterfaceMethod.invoke(null, tmpBinder);
-            IBinder retbinder = (IBinder) getService.invoke(serviceManagerObject, "phone");
-            Method serviceMethod = telephonyStubClass.getMethod("asInterface", IBinder.class);
-
-            telephonyObject = serviceMethod.invoke(null, retbinder);
-            //telephonyCall = telephonyClass.getMethod("call", String.class);
-            telephonyEndCall = telephonyClass.getMethod(method);
-            //telephonyAnswerCall = telephonyClass.getMethod("answerRingingCall");
-
-            telephonyEndCall.invoke(telephonyObject);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.d(TAG,
-                    "FATAL ERROR: could not connect to telephony subsystem");
-            Log.d(TAG, "Exception object: " + e);
             TelecomManager telecomManager = (TelecomManager) context.getSystemService(Context.TELECOM_SERVICE);
             switch (method) {
                     case "endCall":
@@ -193,6 +139,11 @@ public class Utils {
                     default:
                         break;
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d(TAG,
+                    "FATAL ERROR: could not connect to telephony subsystem");
+            Log.d(TAG, "Exception object: " + e);
         }
     }
 
