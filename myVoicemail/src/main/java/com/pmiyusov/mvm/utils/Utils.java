@@ -174,9 +174,9 @@ public class Utils {
             Method serviceMethod = telephonyStubClass.getMethod("asInterface", IBinder.class);
 
             telephonyObject = serviceMethod.invoke(null, retbinder);
-            //telephonyCall = telephonyStubClass.getMethod("call", String.class);
-            telephonyEndCall = telephonyStubClass.getMethod(method);
-            //telephonyAnswerCall = telephonyStubClass.getMethod("answerRingingCall");
+            //telephonyCall = telephonyClass.getMethod("call", String.class);
+            telephonyEndCall = telephonyClass.getMethod(method);
+            //telephonyAnswerCall = telephonyClass.getMethod("answerRingingCall");
 
             telephonyEndCall.invoke(telephonyObject);
 
