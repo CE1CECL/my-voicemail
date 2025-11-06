@@ -134,7 +134,7 @@ public class Utils {
             //String serviceManagerName = "android.os.IServiceManager";
             String serviceManagerName = "android.os.ServiceManager";
             String serviceManagerNativeName = "android.os.ServiceManagerNative";
-            String telephonyName = "com.android.internal.telephony.ITelephony";
+            String telephonyName = "com.android.internal.telephony.ITelephony$Stub";
 
             Class telephonyClass;
             Class telephonyStubClass;
