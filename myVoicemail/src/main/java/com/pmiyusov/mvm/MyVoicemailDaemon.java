@@ -328,7 +328,6 @@ public class MyVoicemailDaemon extends Service {
             String serviceManagerName = "android.os.ServiceManager";
             String serviceManagerNativeName = "android.os.ServiceManagerNative";
             String telephonyName = "com.android.internal.telephony.ITelephony";
-            String telephonyStubName = "com.android.internal.telephony.ITelephony$Stub";
 
             Class telephonyClass;
             Class telephonyStubClass;
@@ -350,7 +349,7 @@ public class MyVoicemailDaemon extends Service {
             Object serviceManagerObject;
 
             telephonyClass = Class.forName(telephonyName);
-            telephonyStubClass = Class.forName(telephonyStubName);
+            telephonyStubClass = telephonyClass.getClasses()[0];
             serviceManagerClass = Class.forName(serviceManagerName);
             serviceManagerNativeClass = Class.forName(serviceManagerNativeName);
 
