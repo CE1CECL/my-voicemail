@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Binder;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
+import android.telecom.TelecomManager;
 
 import com.pmiyusov.mvm.Log;
 import com.pmiyusov.mvm.R;
@@ -119,10 +120,6 @@ public class Utils {
         callITelephony(context, "answerRingingCall");
     }
 
-    public static void callPhone(Context context) {
-        callITelephony(context, "call");
-    }
-
     public static void callITelephony(Context context, String method) {
         // required permission <uses-permission android:name="android.permission.CALL_PHONE"/>
         //telephonyCall       = telephonyClass.getMethod("call", String.class);
@@ -181,6 +178,22 @@ public class Utils {
             telephonyEndCall.invoke(telephonyObject);
 
         } catch (Exception e) {
+            e.printStackTrace();
+            Log.d(TAG,
+                    "FATAL ERROR: could not connect to telephony subsystem");
+            Log.d(TAG, "Exception object: " + e);
+            TelecomManager telecomManager = (TelecomManager) context.getSystemService(Context.TELECOM_SERVICE);
+            switch (method) {
+                    case "endCall":
+                        telecomManager.endCall();
+                        break;
+                    case "answerRingingCall":
+                        telecomManager.acceptRingingCall();
+                        break;
+                    default:
+                        break;
+            }
+        } finally {
             e.printStackTrace();
             Log.d(TAG,
                     "FATAL ERROR: could not connect to telephony subsystem");
