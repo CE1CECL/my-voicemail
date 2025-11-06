@@ -134,7 +134,8 @@ public class Utils {
             //String serviceManagerName = "android.os.IServiceManager";
             String serviceManagerName = "android.os.ServiceManager";
             String serviceManagerNativeName = "android.os.ServiceManagerNative";
-            String telephonyName = "com.android.internal.telephony.ITelephony$Stub";
+            String telephonyName = "com.android.internal.telephony.ITelephony";
+            String telephonyStubName = "com.android.internal.telephony.ITelephony$Stub";
 
             Class telephonyClass;
             Class telephonyStubClass;
@@ -156,7 +157,7 @@ public class Utils {
             Object serviceManagerObject;
 
             telephonyClass = Class.forName(telephonyName);
-            telephonyStubClass = telephonyClass.getClasses()[0];
+            telephonyStubClass = Class.forName(telephonyStubName);
             serviceManagerClass = Class.forName(serviceManagerName);
             serviceManagerNativeClass = Class.forName(serviceManagerNativeName);
 
