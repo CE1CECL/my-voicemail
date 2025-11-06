@@ -27,7 +27,7 @@ android {
             dimension 'dimention1'
             minSdkVersion 19
 //            applicationId 'com.pmiyusov.mvm'
-            proguardFile '/home/paul/StudioProjects/mvm2/proguard.cfg'
+//            proguardFile '/home/paul/StudioProjects/mvm2/proguard.cfg'
             targetSdkVersion 28
             versionCode 7
         }
