@@ -8,14 +8,6 @@ buildscript {
     }
 }
 android {
-    signingConfigs {
-        mySigngConfig {
-            keyAlias 'mykeyalias'
-            keyPassword 'Garfunkel'
-            storeFile file('/home/paul/ks/pmiyusov-release-key.keystore')
-            storePassword 'Simong'
-        }
-    }
     compileSdkVersion 28
     buildToolsVersion "28.0.0"
     defaultConfig {
@@ -24,7 +16,6 @@ android {
         targetSdkVersion 28
         versionCode 7
         versionName '1.7'
-        signingConfig signingConfigs.mySigngConfig
     }
     buildTypes {
         release {
@@ -32,13 +23,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt')
             debuggable false
             jniDebuggable false
-            signingConfig signingConfigs.mySigngConfig
             versionNameSuffix 'rel'
         }
         debug {
             debuggable true
             jniDebuggable true
-            signingConfig signingConfigs.mySigngConfig
             versionNameSuffix 'deb'
         }
     }
@@ -48,10 +37,9 @@ android {
             dimension 'dimention1'
             minSdkVersion 19
             applicationId 'com.pmiyusov.mvm'
-            proguardFile '/home/paul/StudioProjects/mvm5/proguard.cfg'
+//            proguardFile '/home/paul/StudioProjects/mvm5/proguard.cfg'
             targetSdkVersion 28
             versionCode 7
-            signingConfig signingConfigs.mySigngConfig
             versionName '1.7'
         }
         debugFlavor {
@@ -60,7 +48,6 @@ android {
             applicationId 'com.pmiyusov.mvm'
             targetSdkVersion 28
             versionCode 7
-            signingConfig signingConfigs.mySigngConfig
             versionName '1.7'
         }
         free {
