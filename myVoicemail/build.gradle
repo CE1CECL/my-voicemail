@@ -16,12 +16,12 @@ android {
             storePassword 'Simong'
         }
     }
-    compileSdkVersion 34
-    buildToolsVersion "34.0.0"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.0"
     defaultConfig {
         applicationId "com.pmiyusov.mvm"
         minSdkVersion 19
-        targetSdkVersion 34
+        targetSdkVersion 28
         versionCode 7
         versionName '1.7'
         signingConfig signingConfigs.mySigngConfig
@@ -49,7 +49,7 @@ android {
             minSdkVersion 19
             applicationId 'com.pmiyusov.mvm'
             proguardFile '/home/paul/StudioProjects/mvm5/proguard.cfg'
-            targetSdkVersion 34
+            targetSdkVersion 28
             versionCode 7
             signingConfig signingConfigs.mySigngConfig
             versionName '1.7'
@@ -58,7 +58,7 @@ android {
             dimension 'dimention1'
             minSdkVersion 19
             applicationId 'com.pmiyusov.mvm'
-            targetSdkVersion 34
+            targetSdkVersion 28
             versionCode 7
             signingConfig signingConfigs.mySigngConfig
             versionName '1.7'
@@ -96,6 +96,6 @@ android {
 dependencies {
     //    classpath 'com.android.tools.build:gradle:3.0.1'
     implementation project(':aFileChooser')
-    //    implementation "com.android.support:support-core-utils:34.0.0"
-    implementation 'com.android.support:appcompat-v7:34.0.0'
+    //    implementation "com.android.support:support-core-utils:28.0.0"
+    implementation 'com.android.support:appcompat-v7:28.0.0'
 }
